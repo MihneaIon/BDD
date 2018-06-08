@@ -1,0 +1,71 @@
+package entity;
+
+import java.util.Date;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+
+@Entity
+@Table
+public class EntityLogger {
+
+	@Id
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	private int id;
+	
+	private String text;
+	private String data;
+	@Column(name="mynivel")
+	private Nivel myNivel;
+
+	public EntityLogger() {
+
+	}
+	
+	public Nivel getMyNivel() {
+		return myNivel;
+	}
+
+	public void setMyNivel(Nivel myNivel) {
+		this.myNivel = myNivel;
+	}
+
+	public EntityLogger(String myString,String myDate,Nivel nivel)
+	{
+		this.text="default";
+		this.data=myDate;
+		this.myNivel=nivel;
+	}
+	
+	public EntityLogger(String message, Nivel nivel)
+	{
+		this.text=message;
+		this.myNivel=nivel;
+	}
+
+	public String getText() {
+		return text;
+	}
+
+	public void setText(String text) {
+		this.text = text;
+	}
+
+	public String getData() {
+		return data;
+	}
+
+	public void setData(String data) {
+		this.data = data;
+	}
+		
+	@Override
+	public String toString() {
+		return "("+text+" , "+ data + " , "+ myNivel+") \n";
+	}
+}
