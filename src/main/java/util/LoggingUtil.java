@@ -15,10 +15,7 @@ public class LoggingUtil {
 	ConectionManagerFActory2 myConectionManagerFActory2 = new ConectionManagerFActory2();
 
 	public EntityLogger create() {
-		// ConectionManagerFactory1 myConectionManagerFactory1 = new
-		// ConectionManagerFactory1();
-		// ConectionManagerFActory2 myConectionManagerFActory2=new
-		// ConectionManagerFActory2();
+		
 		EntityLogger myEntityLogger = new EntityLogger();
 
 		try {
@@ -43,8 +40,7 @@ public class LoggingUtil {
 				}
 			} else if (myEntityLogger.getMyNivel().toString().equals("WARN")
 					|| myEntityLogger.getMyNivel().toString().equals("INFO")) {
-				// ConectionManagerFActory2 myConectionManagerFActory2 = new
-				// ConectionManagerFActory2();
+				
 				EntityManager manager2 = myConectionManagerFActory2.getFactory().createEntityManager();
 				try {
 					manager2.getTransaction().begin();
@@ -68,8 +64,7 @@ public class LoggingUtil {
 	}
 
 	public List<EntityLogger> DisplayERRORLevel() {
-		// ConectionManagerFactory1 myConectionManagerFactory1 = new
-		// ConectionManagerFactory1();
+		
 		EntityManager manager = myConectionManagerFactory1.getFactory().createEntityManager();
 		try {
 			@SuppressWarnings("unchecked")
@@ -86,8 +81,7 @@ public class LoggingUtil {
 	}
 
 	public List<EntityLogger> DisplayWARNLevel() {
-		// ConectionManagerFActory2 myConectionManagerFActory2 = new
-		// ConectionManagerFActory2();
+		
 		EntityManager manager = myConectionManagerFActory2.getFactory().createEntityManager();
 		try {
 			@SuppressWarnings("unchecked")
