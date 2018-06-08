@@ -1,0 +1,13 @@
+package main;
+
+
+import util.LoggingUtil;
+
+public class Main {
+	
+	public static void main(String[] args) {
+		LoggingUtil loggingUtil=new LoggingUtil();
+		loggingUtil.menu();
+		System.exit(0);	
+	}
+}
