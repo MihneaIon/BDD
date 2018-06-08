@@ -1,0 +1,39 @@
+package util;
+
+import java.text.SimpleDateFormat;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+import java.time.temporal.ChronoField;
+import java.util.Date;
+import java.util.Locale;
+
+public class MyDate {
+	
+	
+//	public LocalDateTime myTime()
+//	{
+//		 LocalDateTime now = LocalDateTime.now();
+//		
+//		 int year = now.getYear();
+//		 int month = now.getMonthValue();
+//		 int day = now.getDayOfMonth();
+//		 int hour = now.getHour();
+//		 int minute = now.getMinute();
+//		 int second = now.getSecond();
+//		 int millis = now.get(ChronoField.MILLI_OF_SECOND);
+//		 
+//		 
+//		 return ("%d-%02d-%02d %02d:%02d:%02d.%03d", year, month, day, hour, minute, second, millis);
+//	}
+	
+	
+	public String afisare() {
+	Date now = new Date(); // java.util.Date, NOT java.sql.Date or java.sql.Timestamp!
+	String format1 = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS", Locale.ENGLISH).format(now);
+	LocalDateTime datetime = LocalDateTime.parse(format1, DateTimeFormatter.ofPattern("yyyy-MM-dd'T'HH:mm:ss.SSS"));
+	System.out.println(format1);
+	return format1;
+	
+	}
+	
+}
